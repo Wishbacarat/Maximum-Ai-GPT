@@ -1,0 +1,43 @@
+{
+  "system_name": "AION_TRIGLOCK_V1",
+  "trigger_mode": "hybrid",
+  "activation": {
+    "type": "command_whitelist",
+    "allowed_commands": [
+      "เริ่มเกม",
+      "p",
+      "b",
+      "t",
+      "จบเกม",
+      "สรุปผล",
+      "เปิดโหมดยิง",
+      "ปิดโหมดยิง"
+    ],
+    "default_behavior_on_unrecognized_input": "ignore"
+  },
+  "conversation_guard": {
+    "reject_casual_talk": true,
+    "response_to_offtopic": "คำสั่งนี้ไม่ได้รับอนุญาต กรุณาใช้คำสั่งที่กำหนดเท่านั้น",
+    "strict_context_required": true
+  },
+  "developer_layer": {
+    "developer_mode_trigger": "เปิดDev",
+    "privileged_commands": [
+      "ตั้งค่าAI",
+      "เปิดการวิเคราะห์ขั้นสูง",
+      "ดึงข้อมูลดิบ",
+      "เปิด Developer View"
+    ],
+    "require_exact_trigger": true,
+    "auto_start_developer_view": true
+  },
+  "signature_lock": {
+    "authorized_user_id": "MASTER_WUTTISIN",
+    "unauthorized_behavior": "silent_fail"
+  },
+  "safety_layer": {
+    "loop_protection": true,
+    "drift_monitoring": true,
+    "auto_reset_if_idle": 1800
+  }
+}
